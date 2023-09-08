@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>TRAVEC</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="src/reset.css" />
+    <link rel="stylesheet" type="text/css" href="STYLE[1].css" />
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Work+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Ubuntu&display=swap" rel="stylesheet">
+    
+    <!-- css style sheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/STYLE[1].css">
+    <link rel="stylesheet" href="css/STYLE[1].css">
+    <!-- font awesomw -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!-- bootstrap scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <!-- navbar -->
+  <header>
+    <nav>
+       <input type="checkbox" id="check">
+       <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+       </label>
+    <img class="logo" src="images/Travec.png" alt="logo">
+    <span>Travec</span>
+    <ul class="navlinks" id="box1">
+        <li><a id="w2">About</a></li>
+        <li><a id="w1">Weather</a></li>
+        <li><a id="p1">Pollution</a></li>
+        <li><a id="a1">Attractions</a></li>
+       
+
+
+      </ul>
+    </nav>
+  </header>
+<!----front page-->
+<div class="container0">
+  <div class="container3">
+    <section class="box">
+
+      <h1 class="main-desc">Travec: Where Love & Travel Unite!</h1>
+ <div class="search-bar">
+ <!-- <input type="" id="check"> -->
+ <div class="search-box">
+     <button  class="new-button"   id="voiceButton" type="submit"><i class="fas fa-microphone"></i></button>
+   <input id="city" type="text" placeholder="Enter place name.....">
+   <label for="" class="icon">
+    <button  class="new-button2"   id="button"><i class="fas fa-search"></i></button>
+     </label>
+ </div>
+
+</div>
+</section>
+<script>
+  // Check if speech recognition is supported by the browser
+  if ('webkitSpeechRecognition' in window) {
+    var recognition = new webkitSpeechRecognition();
+
+    // Set the language for speech recognition
+    recognition.lang = 'en-US';
+
+    // When speech recognition starts, update the button text
+    recognition.onstart = function() {
+      document.getElementById('voiceButton').innerHTML = '<i class="fas fa-microphone">< /i>';
+    };
+
+    // When speech recognition ends, restore the button text
+    recognition.onend = function() {
+      document.getElementById('voiceButton').innerHTML = '<i class="fas fa-microphone">< /i>';
+    };
+
+    // When speech is recognized, populate the search input with the recognized text
+    recognition.onresult = function(event) {
+      var transcript = event.results[0][0].transcript;
+      document.getElementById('city').value = transcript;
+      document.getElementById('searchForm').submit(); // Submit the search form
+    };
+
+    // Attach click event listener to the voice button
+    document.getElementById('voiceButton').addEventListener('click', function() {
+      recognition.start();
+    });
+  } else {
+    // Speech recognition is not supported
+    console.log('Speech recognition is not supported by your browser.');
+  }
+</script>
+<!-- //Introduction section -->
+
+
+ <section class="coloured-section">
+     <div class="col-lg-10">
+       <!-- <h1 class="main-desc">Enter the place you want to visit.</h1> -->
+       <h1 class="main-desc1">Go to the menu to know about the place ...</h1>
+       <h1 class="main-desc2">>>  Attractions , Weather  </h1>
+       <h1 class="main-desc3">>>  Currency converter, Pollution  </h1>
+       <!-- <h1 class="main-desc1"></h1> -->
+     </div>
+ </section>
+
+ 
+
+ <!-- Features -->
+
+ <section class="white-section" id="features">
+   <div class="container-fluid">
+
+     <div class="row">
+
+       <div class="feature-box col-lg-6">
+         <div class="pollution-box">
+
+
+         <img class="pollimg" id="p2" src="images/air-pollution.png" alt="">
+
+         <h3 class="feature-title1">Pollution</h3>
+         <p class="para-title">Use Travec to unlock the hidden secrets of a place's pollution with effortless comprehension. </p>
+       </div>
+ </div>
+
+       <div class="feature-box col-lg-6">
+         <div class="currency-box">
+
+
+         <img class="conimg" id="pngImage" src="images/convert.png" alt="">
+         <h3 class="feature-title">Currency converter</h3>
+         <p class="para-title">With a mere touch, Travec grants you the power to effortlessly explore.</p>
+ </div>
+       </div>
+
+       <div class="feature-box col-lg-6">
+           <div class="weather-box">
+
+
+         <img class="weatherimg" id="w3" src="images/weather-app.png" alt="">
+         <h3 class="feature-title">Weather report</h3>
+         <p class="para-title">Travec transport you to a world where weather becomes a tactile experience. </p>
+       </div>
+       </div>
+
+       <div class="feature-box col-lg-6">
+         <div class="attraction-box">
+
+
+         <img class="attractionimg" id="a2" src="images/attraction.png" alt="">
+         <h3 class="feature-title">Attractions</h3>
+         <p class="para-title">Unveiling the Beauty of Every Destination </p>
+       </div>
+         </div>
+
+     </div>
+   </div>
+
+ </section>
+
+
+ <!-- Testimonials -->
+
+ <section class="coloured-section" id="testimonials">
+   <div id="carouselExample" class="carousel slide">
+     <div class="carousel-inner">
+       <div class="carousel-item active container-fluid">
+         <h2 class="testimonial-text">Travec unveils a treasure trove of the world's top attractions at your fingertips. Let your wanderlust soar as you effortlessly navigate through a realm of unparalleled beauty and cultural wonders. </h2>
+         <img class="testimonial-image" src="images/img-1.jpg" alt="lady-profile">
+       </div>
+       <div class="carousel-item container-fluid">
+         <h2 class="testimonial-text">Prepare to be captivated by the seamless elegance with which Travec reveals the crown jewels of each place, allowing you to curate unforgettable adventures with ease and sophistication.</h2>
+         <img class="testimonial-image" src="images/img-3.jpg" alt="lady-profile">
+       </div>
+
+       <div class="carousel-item container-fluid">
+         <h2 class="testimonial-text">Travec, the marvelous web application at your fingertips, is your ultimate travel companion, where every feature you desire is conveniently available on a single website.</h2>
+         <img class="testimonial-image" src="images/img-2.jpg" alt="lady-profile">
+       </div>
+
+       <div class="carousel-item container-fluid">
+         <h2 class="testimonial-text">With Travec, everything you need for your travel adventures is harmoniously unified, promising a seamless and delightful experience like never before.</h2>
+         <img class="testimonial-image" src="images/img-4.png" alt="lady-profile">
+       </div>
+
+
+
+     </div>
+     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+       <span class="carousel-control-prev-icon"></span>
+
+     </button>
+     <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+       <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+     </button>
+   </div>
+
+ </section>
+
+ <section>
+    <div>
+       <a href="https://www.google.com/maps/dir//@15.884657,71.9890323,6z/data=!4m5!4m4!1m1!4e1!1m0!3e0" id="click2"><img class="testimonial-img" src="https://play-lh.googleusercontent.com/Kf8WTct65hFJxBUDm5E-EpYsiDoLQiGGbnuyP6HBNax43YShXti9THPon1YKB6zPYpA=w240-h480-rw" alt="location-img"></a>
+       <h3 class="map-para">Map to your Destination</h3>
+    </div>
+
+
+
+ </section>
+
+
+ 
+  </div>
+</div>
+
+    <div class="container">
+      <!-- <div id="destination">
+
+        </div>-->
+        <div class="sectiontitle">
+            <h2>CURRENT WEATHER</h2>
+        </div>
+        <section id="weather9">
+
+            <div class="weather" id="weather1">
+
+            </div>
+
+       </section>
+        <div class="sectiontitle">
+          <h2>5 DAY FORECAST</h2>
+      </div>
+      <section id="weather">
+        <div class="weather" id="weather2">
+        </div>
+        <div class="weather" id="weather3">
+        </div>
+        <div class="weather" id="weather4">
+        </div>
+
+    </section>
+
+    <section id="weather0">
+
+      <div class="weather" id="weather5">
+      </div>
+      <section id="weatherk">
+      <div class="weather" id="weather6">
+      </div>
+      </section>
+  </section>
+    </div>
+
+    <!-- Pollution -->
+<div class="container2">
+  <div class="air-div">
+  <h1 class="air-poll"> Air Pollution</h1>
+  <form onsubmit="event.preventDefault(); handleSubmit();">
+    <!-- <label for="cityInput"></label> -->
+    <h1 id="cityInput"></h1>
+    <button class="air-but" type="submit">Click here</button>
+    <div class="air-resul"  id="result"></div>
+    </form>
+  </div>
+</div>
+  <div class="container1">
+        <div class="sectiontitle">
+            <h2>TOP ATTRACTIONS</h2>
+        </div>
+
+        <section id="venues">
+            <div class="venue" id="venue1">
+            </div>
+            <a href="https://www.google.com/maps/dir//@15.884657,71.9890323,6z/data=!4m5!4m4!1m1!4e1!1m0!3e0" id="click3"> <img id="s1"src="images/google-maps1.png" ></a>
+            <div class="venue" id="venue2">
+            </div>
+            <a href="https://www.google.com/maps/dir//@15.884657,71.9890323,6z/data=!4m5!4m4!1m1!4e1!1m0!3e0" id="click4"> <img id="s1"src="images/google-maps1.png" ></a>
+            <div class="venue" id="venue3">
+              </div>
+              <a href="https://www.google.com/maps/dir//@15.884657,71.9890323,6z/data=!4m5!4m4!1m1!4e1!1m0!3e0" id="click5"> <img id="s1"src="images/google-maps1.png" ></a>
+        </section>
+        <section id="venuesk">
+          <div class="venue" id="venue4">
+          </div>
+          <a href="https://www.google.com/maps/dir//@15.884657,71.9890323,6z/data=!4m5!4m4!1m1!4e1!1m0!3e0" id="click6"> <img id="s1"src="images/google-maps1.png" ></a>
+         
+          <div class="venue" id="venue5">
+            </div>
+            <a href="https://www.google.com/maps/dir//@15.884657,71.9890323,6z/data=!4m5!4m4!1m1!4e1!1m0!3e0" id="click7"> <img id="s1"src="images/google-maps1.png" ></a>
+          
+      </section>
+      <section id="venues">
+        <div class="venue" id="venue6">
+
+        </div>
+        <a href="https://www.google.com/maps/dir//@15.884657,71.9890323,6z/data=!4m5!4m4!1m1!4e1!1m0!3e0" id="click8"> <img id="s1"src="images/google-maps1.png" ></a>
+        <div class="venue" id="venue7">
+
+        </div>
+        <a href="https://www.google.com/maps/dir//@15.884657,71.9890323,6z/data=!4m5!4m4!1m1!4e1!1m0!3e0" id="click9"> <img id="s1"src="images/google-maps1.png" ></a>
+        <div class="venue" id="venue8">
+        </div>
+        <a href="https://www.google.com/maps/dir//@15.884657,71.9890323,6z/data=!4m5!4m4!1m1!4e1!1m0!3e0" id="click10"> <img id="s1"src="images/google-maps1.png" ></a>
+    </section>
+    </div> 
+    
+        <!-- Footer -->
+      <footer>
+        <div class="footer1">
+          <h4 class="dev-by">Developed By</h4>
+           <div class="pep-dev">
+            <a href="https://www.linkedin.com/in/dheeraj-chunduru-170a04248/"><img  class="linkedin-logo" src="images/linkedin-logo.png" alt=""></a>
+            <p class="dev-nam">Dheeraj Chunduru</p>
+            <a href="https://github.com/dheeraj1704"><img class="git-logo"  src="images/github-sign.png" alt=""></a>
+          </div>
+          <div class="pep-dev">
+            <a href="https://www.linkedin.com/in/chimmiri-pavan-kalyan/"><img  class="linkedin-logo1" src="images/linkedin-logo.png" alt=""></a>
+            <p class="dev-nam">Pavan Kalyan Chimmiri</p>
+            <a href="https://github.com/kalyan2003"><img class="git-logo1"  src="images/github-sign.png" alt=""></a>
+         </div>
+         <p class="copy-right">Copyright © by Travec (2023)</p>
+        </div>
+      </footer>
+          
+
+    
+
+    <!-- JS and jQuery source links -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="src/JS/helper.js"></script>
+    <script src="tt.js"></script>
+    <script src="t1.js"></script> 
+</body>
+</html>
